@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  calculate your gpa in real time
 // @author       Avalanche
-// @match        http://jwxk.ucas.ac.cn/score/bks/*
+// @match        https://jwxk.ucas.ac.cn/score/bks/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
