@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Real Time GPA Calculator UCAS
-// @namespace    Avalanche
+// @namespace    https://github.com/TimeSea05/gpa-calc-ucas
 // @version      0.1
 // @description  calculate your gpa in real time
 // @author       Avalanche
