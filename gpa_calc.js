@@ -11,14 +11,15 @@
 
 (function() {
   'use strict';
-  let userInfoTable = document.querySelectorAll('table')[0];
-  let scoreTable = document.querySelectorAll('table')[1];
+  const userInfoTable = document.querySelectorAll('table')[0];
+  const scoreTable = document.querySelectorAll('table')[1];
+
   let totalCredits = 0, totalScore = 0, totalGradePoints = 0;
   let gradePointAverage = 0, scoreAverage = 0;
 
   function getGradePoint(score) {
     // 分数和GPA的对应表
-    let scoreGPAObj = {
+    const scoreGPAObj = {
       90: 4.0, 89: 3.9, 88: 3.9, 87: 3.9, 86: 3.8,
       85: 3.8, 84: 3.7, 83: 3.7, 82: 3.6, 81: 3.5,
       80: 3.5, 79: 3.4, 78: 3.4, 77: 3.3, 76: 3.3,
@@ -39,24 +40,24 @@
     // 如果分数一栏是"合格", "不合格"等非数字字样，那么跳过
     if (Number.isNaN(Number(scoreTable.rows[i].cells[4].innerHTML))) continue;
     
-    let credit = Number(scoreTable.rows[i].cells[3].innerHTML);
-    let score = Number(scoreTable.rows[i].cells[4].innerHTML);
-    
+    const credit = Number(scoreTable.rows[i].cells[3].innerHTML);
+    const score = Number(scoreTable.rows[i].cells[4].innerHTML);
+
     totalCredits += credit;
     totalScore += credit * score;
     totalGradePoints += credit * getGradePoint(score);
   }
 
-  if (totalScore == 0) {
-    let courseResult = document.querySelectorAll('h5')[document.querySelectorAll('h5').length - 1];
+  if (totalScore === 0) {
+    const courseResult = document.querySelectorAll('h5')[document.querySelectorAll('h5').length - 1];
     courseResult.innerHTML += '(脚本未生效)';
     return;
   }
 
   gradePointAverage = (totalGradePoints / totalCredits).toFixed(2);
   scoreAverage = (totalScore / totalCredits).toFixed(2);
-  
-  let currentURL = document.URL;
+
+  const currentURL = document.URL;
   let gpaProp = null;
   if (currentURL.includes('all')) gpaProp = '所有学期';
   else gpaProp = '当前学期';
@@ -66,8 +67,8 @@
   userInfoTable.rows[2].cells[1].innerHTML += '(非实时)';
 
   // 增加平均分信息
-  let tr = document.createElement('tr');
-  let gradePointAverageTd = document.createElement('td');
+  const tr = document.createElement('tr');
+  const gradePointAverageTd = document.createElement('td');
   gradePointAverageTd.innerHTML = `加权平均分(实时): ${scoreAverage}`;
   tr.append(gradePointAverageTd);
   tr.append(document.createElement('td')); // 添加空栏
