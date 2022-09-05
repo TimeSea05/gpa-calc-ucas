@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Real Time GPA Calculator UCAS
 // @namespace    https://github.com/TimeSea05/gpa-calc-ucas
-// @version      0.1
+// @version      0.2
 // @description  calculate your gpa in real time
 // @author       Avalanche
 // @match        https://jwxk.ucas.ac.cn/score/bks/*
