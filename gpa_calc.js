@@ -37,11 +37,13 @@
     // 第一行是表头, 跳过
     // 在每一行中, 表格的第四列和第五列分别是学分和成绩
 
-    // 如果分数一栏是"合格", "不合格"等非数字字样，那么跳过
-    if (Number.isNaN(Number(scoreTable.rows[i].cells[4].innerHTML))) continue;
-    
     const credit = Number(scoreTable.rows[i].cells[3].innerHTML);
-    const score = Number(scoreTable.rows[i].cells[4].innerHTML);
+    const scoreString = scoreTable.rows[i].cells[4].innerHTML;
+    const score = Number(scoreString);
+
+    // 如果分数一栏是"合格", "不合格"等非数字字样，那么跳过
+    // 课程未评估，分数一栏显示未空，同样也跳过
+    if (scoreString === '' || Number.isNaN(score)) continue;
 
     totalCredits += credit;
     totalScore += credit * score;
