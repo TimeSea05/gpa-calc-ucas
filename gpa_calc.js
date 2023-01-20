@@ -31,6 +31,7 @@
 
     if (score >= 90) return scoreGPAObj[90];
     else if (score >= 60 && score < 90) return scoreGPAObj[score];
+    else return 0;
   }
 
   for (let i = 1; i < scoreTable.rows.length; i++) {
