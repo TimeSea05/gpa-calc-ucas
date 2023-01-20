@@ -58,7 +58,7 @@
   }
 
   gradePointAverage = (totalGradePoints / totalCredits).toFixed(2);
-  scoreAverage = (totalScore / totalCredits).toFixed(2);
+  scoreAverage = (totalScore / totalCredits).toFixed(3);
 
   const currentURL = document.URL;
   let gpaProp = null;
