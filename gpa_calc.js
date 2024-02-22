@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  calculate your gpa in real time
 // @author       Avalanche
-// @match        https://jwxkts2.ucas.ac.cn/score/bks/*
+// @match        https://xkcts.ucas.ac.cn/score/bks/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
@@ -57,8 +57,8 @@
     return;
   }
 
-  gradePointAverage = (totalGradePoints / totalCredits).toFixed(2);
-  scoreAverage = (totalScore / totalCredits).toFixed(3);
+  gradePointAverage = (totalGradePoints / totalCredits).toFixed(3);
+  scoreAverage = (totalScore / totalCredits).toFixed(2);
 
   const currentURL = document.URL;
   let gpaProp = null;
